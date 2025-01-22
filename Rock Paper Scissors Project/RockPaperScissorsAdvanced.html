@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Home</title>
+        <title>Rock Paper Scissors Advanced</title>
 
         <link rel="icon" type="image/x-icon" href="images/favicon.ico"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <link rel="stylesheet" href="FileNameHere.css">
+        <link rel="stylesheet" href="styles/12-rock-paper-scissors.css">
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-        <script src="FileNameHere.js"></script>
 
     </head>
 
@@ -39,8 +38,8 @@
                             <a href="http://127.0.0.1:5501/Rock%20Paper%20Scissors%20Project/RockPaperScissors.html" class="nav-link">Rock Paper Scissors</a>
                         </li>
                         <li class="nav-item">
-                            <a href="http://127.0.0.1:5501/Rock%20Paper%20Scissors%20Project/RockPaperScissorsAdvanced.html" class="nav-link">Rock Paper Scissors Advanced</a>
-                        </li>
+                          <a href="http://127.0.0.1:5501/Rock%20Paper%20Scissors%20Project/RockPaperScissorsAdvanced.html" class="nav-link">Rock Paper Scissors Advanced</a>
+                      </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Addhere</a>
                         </li>
@@ -77,7 +76,38 @@
         </nav>
 
         <main>
+            <center>
+              <h1 class="title">Rock Paper Scissors</h1>
+              <button class="move-button js-rock-button">
+                <img src="images/rock-emoji.png" class="move-icon">
+              </button>
+          
+              <button class="move-button js-paper-button">
+                <img src="images/paper-emoji.png" class="move-icon">
+              </button>
+          
+              <button class="move-button js-scissors-button">
+                <img src="images/scissors-emoji.png" class="move-icon">
+              </button>
+          
+              <h3 class="js-result result"></h3>
+              <h5 class="js-moves"></h5>
+              <h5 class="js-score score"></h5>
+          
+              <button onclick="
+                score.wins = 0;
+                score.losses = 0;
+                score.ties = 0;
+                localStorage.removeItem('score');
+                updateScoreElement();
+              " class="reset-score-button js-reset-score-button">Reset Score</button>
+          
+              <button class="auto-play-button" onclick="
+                autoPlay();
+              ">Auto Play</button>
 
+              <script src="RockPaperScissorsAdvanced.js"></script>
+            </center>
         </main>
 
         <footer class="text-center text-lg-start bg-body-tertiary text-muted">
